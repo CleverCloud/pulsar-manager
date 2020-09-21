@@ -29,17 +29,20 @@ module.exports = {
       },
       '/admin/*': {
         // target: 'http://localhost:443/',
-        target: 'http://localhost:7750/',
+        //target: 'http://localhost:7750/',
+        target: process.env.PULSAR_MANAGER_BACKEND_URL,
         changeOrigin: true
       },
       '/pulsar-manager/*': {
         // target: 'http://localhost:443/',
-        target: 'http://localhost:7750/',
+        //target: 'http://localhost:7750/',
+        target: process.env.PULSAR_MANAGER_BACKEND_URL,
         changeOrigin: true
       },
       '/lookup/*': {
         // target: 'http://localhost:443/',
-        target: 'http://localhost:7750/',
+        //target: 'http://localhost:7750/',
+        target: process.env.PULSAR_MANAGER_BACKEND_URL,
         changeOrigin: true
       }
     },
@@ -49,7 +52,7 @@ module.exports = {
     // can be overwritten by process.env.HOST
     // if you want dev by ip, please set host: '0.0.0.0'
     host: '0.0.0.0',
-    port: 9527, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    port: process.env.PORT, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: true,
     errorOverlay: true,
     notifyOnErrors: false,
